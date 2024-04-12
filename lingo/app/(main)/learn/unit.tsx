@@ -28,8 +28,8 @@ export const Unit = ({
       <UnitBanner title={title} description={description} />
       <div className="flex items-center flex-col relative">
         {lessons.map((lesson, index) => {
-          const isCurrent = lesson.id == activeLesson?.id;
-          const isLocked = !lesson.completed && isCurrent;
+          const isCurrent = true || lesson.id == activeLesson?.id; //TODO: Remove true
+          const isLocked = !lesson.completed && !isCurrent;
 
           return (
             <LessonButton
